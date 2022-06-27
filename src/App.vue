@@ -1,26 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1 @click="incress">클릭하세요.</h1>
+    <p>{{count}}</p>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return {
+      count : 0
+    }
+  },
+  methods:{
+    incress(){
+      this.count += 3;
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+//  스타일 이 지역적으로
+<style scoped>
+h1{
+  font-size:50px;
+  color:green;
+  text-align:center;
+}
+p{
+  font-size:25px;
+  color:red;
+  text-align:center;
 }
 </style>
